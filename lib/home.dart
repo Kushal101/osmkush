@@ -233,7 +233,7 @@ class _MainExampleState extends State<MainExample> with OSMMixinObserver {
           ),
           IconButton(
             onPressed: () async {
-              await Navigator.pushNamed(context, "/picker-result");
+              await Navigator.of(context).pushNamed('/picker-result');
             },
             icon: Icon(Icons.search),
           ),
@@ -387,14 +387,14 @@ class _MainExampleState extends State<MainExample> with OSMMixinObserver {
                     visible: visible,
                     child: AnimatedOpacity(
                       opacity: visible ? 1.0 : 0.0,
-                      duration: Duration(milliseconds: 500),
+                      duration: const Duration(milliseconds: 500),
                       child: child,
                     ),
                   );
                 },
                 child: FloatingActionButton(
                   key: UniqueKey(),
-                  child: Icon(Icons.arrow_forward),
+                  child: const Icon(Icons.arrow_forward),
                   heroTag: "confirmAdvPicker",
                   onPressed: () async {
                     advPickerNotifierActivation.value = false;
@@ -488,7 +488,7 @@ class _MainExampleState extends State<MainExample> with OSMMixinObserver {
 
       ///selection geoPoint
       GeoPoint point = await controller.selectPosition(
-          icon: MarkerIcon(
+          icon: const MarkerIcon(
             icon: Icon(
               Icons.person_pin_circle,
               color: Colors.amber,
@@ -516,7 +516,7 @@ class _MainExampleState extends State<MainExample> with OSMMixinObserver {
           point, point2,
           roadType: notifierRoadType.value,
           //interestPoints: [pointM1, pointM2],
-          roadOption: RoadOption(
+          roadOption: const RoadOption(
               roadWidth: 10, roadColor: Colors.blue, showMarkerOfPOI: false, zoomInto: true),
         );
         print("duration:${Duration(seconds: roadInformation.duration!.toInt()).inMinutes}");

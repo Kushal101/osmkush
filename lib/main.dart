@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
+import 'package:maps_open/search.dart';
 
 import 'home.dart';
 
@@ -12,6 +14,10 @@ class MyApp extends StatelessWidget {
 
       routes: {
         "/home": (ctx) => MainExample(),
+        "/picker-result":(ctx) =>LocationAppExample(),
+        "/search":(ctx)=>SearchPage(),
+
+
         //"/adv-home": (ctx) => AdvandedMainExample(),
         // "/nav": (ctx) => MyHomeNavigationPage(
         //       map: Container(),
@@ -22,7 +28,7 @@ class MyApp extends StatelessWidget {
                   onPressed: () {
                     Navigator.popAndPushNamed(ctx, "/home");
                   },
-                  child: Text("another page"),
+                  child: const Text("another page"),
                 )))
       },
     );

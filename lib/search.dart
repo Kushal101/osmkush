@@ -15,7 +15,7 @@ class _LocationAppExampleState extends State<LocationAppExample> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("search picker example"),
+        title: const Text("search picker example"),
       ),
       body: Center(
         child: Column(
@@ -111,7 +111,7 @@ class _SearchPageState extends State<SearchPage> {
             FocusScope.of(context).requestFocus(new FocusNode());
           },
           decoration: InputDecoration(
-            prefixIcon: Icon(
+            prefixIcon: const Icon(
               Icons.search,
               color: Colors.black,
             ),
@@ -130,7 +130,7 @@ class _SearchPageState extends State<SearchPage> {
                   controller.setSearchableText("");
                   FocusScope.of(context).requestFocus(new FocusNode());
                 },
-                child: Icon(
+                child: const Icon(
                   Icons.close,
                   size: 16,
                   color: Colors.black,
@@ -143,7 +143,7 @@ class _SearchPageState extends State<SearchPage> {
             border: InputBorder.none,
             enabledBorder: InputBorder.none,
             fillColor: Colors.grey[300],
-            errorBorder: OutlineInputBorder(
+            errorBorder: const OutlineInputBorder(
               borderSide: BorderSide(color: Colors.red),
             ),
           ),
@@ -158,10 +158,10 @@ class _SearchPageState extends State<SearchPage> {
             GeoPoint p = await controller.selectAdvancedPositionPicker();
             Navigator.pop(context, p);
           },
-          child: Icon(Icons.arrow_forward),
+          child: const Icon(Icons.arrow_forward),
         ),
       ),
-      pickerConfig: CustomPickerLocationConfig(
+      pickerConfig: const CustomPickerLocationConfig(
         initZoom: 8,
       ),
     );
@@ -169,6 +169,8 @@ class _SearchPageState extends State<SearchPage> {
 }
 
 class TopSearchWidget extends StatefulWidget {
+  const TopSearchWidget({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => _TopSearchWidgetState();
 }
